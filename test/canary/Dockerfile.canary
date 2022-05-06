@@ -25,7 +25,7 @@ RUN apt-get update && apt install -y software-properties-common \
  && apt update && apt install -y yq
 
 # Install kubectl
-RUN curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256" \
+RUN  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" \
  && chmod +x ./kubectl \
  && cp ./kubectl /bin
 
