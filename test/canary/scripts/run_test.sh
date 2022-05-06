@@ -64,12 +64,11 @@ function cleanup {
 }
 trap cleanup EXIT
 
+aws --version
+
 # Update kubeconfig
 aws --region $CLUSTER_REGION eks update-kubeconfig --name $CLUSTER_NAME
 
-echo "weeeeeeeeeeeee"
-
-cat ~/.kube/config
 cat /root/.kube/config
 
 # Hack to fix https://stackoverflow.com/questions/71318743/kubectl-versions-error-exec-plugin-is-configured-to-use-api-version-client-auth
