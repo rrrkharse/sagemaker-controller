@@ -67,8 +67,11 @@ trap cleanup EXIT
 # Update kubeconfig
 aws --region $CLUSTER_REGION eks update-kubeconfig --name $CLUSTER_NAME
 
+cat ~/.kube/config
+cat /root/.kube/config
+
 # Hack to fix https://stackoverflow.com/questions/71318743/kubectl-versions-error-exec-plugin-is-configured-to-use-api-version-client-auth
-sed -i 's/v1alpha1/v1beta1/' ~/.kube/config
+sed -i 's/v1alpha1/v1beta1/' /root/.kube/config
 
 # Setup OIDC
 create_oidc_role "$CLUSTER_NAME" "$CLUSTER_REGION" "$NAMESPACE"
