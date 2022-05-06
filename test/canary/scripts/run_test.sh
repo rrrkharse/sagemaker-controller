@@ -74,6 +74,8 @@ cat /root/.kube/config
 # Hack to fix https://stackoverflow.com/questions/71318743/kubectl-versions-error-exec-plugin-is-configured-to-use-api-version-client-auth
 sed -i 's/v1alpha1/v1beta1/' /root/.kube/config
 
+cat /root/.kube/config
+
 # Setup OIDC
 create_oidc_role "$CLUSTER_NAME" "$CLUSTER_REGION" "$NAMESPACE"
 
