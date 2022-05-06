@@ -67,6 +67,8 @@ trap cleanup EXIT
 # Update kubeconfig
 aws --region $CLUSTER_REGION eks update-kubeconfig --name $CLUSTER_NAME
 
+echo "weeeeeeeeeeeee"
+
 cat ~/.kube/config
 cat /root/.kube/config
 
